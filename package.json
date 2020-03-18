@@ -1,0 +1,37 @@
+{
+    "name": "@mskg/expo-azure-devops-approvalgate",
+    "author": "Markus Kling",
+    "license": "Copyright 2019-present Markus Kling",
+    "version": "1.0.0",
+    "private": false,
+    "dependencies": {
+        "aws-sdk": "^2.621.0",
+        "lodash": "^4.17.11",
+        "safe-compare": "^1.1.4"
+    },
+    "devDependencies": {
+        "@types/aws-lambda": "^8.10.42",
+        "@types/lodash": "4.14.149",
+        "@types/node": "^13.7.2",
+        "file-loader": "^6.0.0",
+        "serverless": "^1.64.0",
+        "serverless-domain-manager": "^3.3.1",
+        "serverless-dynamodb-local": "^0.2.39",
+        "serverless-iam-roles-per-function": "^2.0.1",
+        "serverless-offline": "^5.8.0",
+        "serverless-webpack": "^5.3.0",
+        "ts-loader": "^6.0.4",
+        "typescript": "3.8.3",
+        "webpack": "^4.41.6"
+    },
+    "files": [
+        "dist/"
+    ],
+    "scripts": {
+        "deploy": "sls deploy",
+        "package": "sls package",
+        "remove": "sls remove",
+        "dev": "yarn run dynamodb && sls offline start --verbose --noTimeout --noAuth",
+        "dynamodb": "sls dynamodb install"
+    }
+}
